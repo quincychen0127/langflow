@@ -101,6 +101,7 @@ class ChainFrontendNode(FrontendNode):
             field.multiline = True
 
 
+
 class SeriesCharacterChainNode(FrontendNode):
     name: str = "SeriesCharacterChain"
     template: Template = Template(

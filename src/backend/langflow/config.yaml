@@ -44,7 +44,8 @@ chains:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
   SimpleSequentialChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
-  
+  TransformChain:
+    documentation: "https://python.langchain.com/docs/modules/chains/foundational/transformation"
 
 documentloaders:
   AirbyteJSONLoader:
