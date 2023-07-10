@@ -24,6 +24,8 @@ chains:
     documentation: ""
   SeriesCharacterChain:
     documentation: ""
+  BaseSequentialChain:
+    documentation: ""
   MidJourneyPromptChain:
     documentation: ""
   TimeTravelGuideChain:
@@ -40,6 +42,10 @@ chains:
     documentation: ""
   SequentialChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
+  SimpleSequentialChain:
+    documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
+  
+
 documentloaders:
   AirbyteJSONLoader:
     documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/airbyte_json"
