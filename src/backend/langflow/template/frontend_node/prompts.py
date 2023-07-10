@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'../../../')
+
 from typing import Optional
 
 from langchain.agents.mrkl import prompt
@@ -44,6 +47,11 @@ class PromptFrontendNode(FrontendNode):
         # All prompt fields should be password=False
         field.password = False
 
+        if field.name == "input_variables":
+            field.required = False
+            field.show = True
+            field.multiline = True
+            field.advanced = True
 
 class PromptTemplateNode(FrontendNode):
     name: str = "PromptTemplate"

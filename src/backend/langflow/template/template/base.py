@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'../../../')
+
 from typing import Callable, Optional, Union
 
 from pydantic import BaseModel

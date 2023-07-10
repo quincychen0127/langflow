@@ -38,6 +38,8 @@ chains:
     documentation: "https://python.langchain.com/docs/modules/chains/popular/chat_vector_db"
   CombineDocsChain:
     documentation: ""
+  SequentialChain:
+    documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
 documentloaders:
   AirbyteJSONLoader:
     documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/airbyte_json"

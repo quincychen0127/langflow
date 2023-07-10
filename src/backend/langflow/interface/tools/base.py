@@ -6,6 +6,9 @@ from langchain.agents.load_tools import (
     _LLM_TOOLS,
 )
 
+import sys
+sys.path.insert(0,'../../../')
+
 from langflow.custom import customs
 from langflow.interface.base import LangChainTypeCreator
 from langflow.interface.tools.constants import (

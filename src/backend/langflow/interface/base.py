@@ -4,6 +4,9 @@ from langchain.chains.base import Chain
 from langchain.agents import AgentExecutor
 from pydantic import BaseModel
 
+import sys
+sys.path.insert(0,'../../')
+
 from langflow.template.field.base import TemplateField
 from langflow.template.frontend_node.base import FrontendNode
 from langflow.template.template.base import Template

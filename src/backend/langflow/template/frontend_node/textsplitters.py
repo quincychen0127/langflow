@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'../../../')
+
 from langflow.template.field.base import TemplateField
 from langflow.template.frontend_node.base import FrontendNode
 from langchain.text_splitter import Language

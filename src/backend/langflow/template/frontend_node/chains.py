@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'../../../')
+
 from typing import Optional
 
 from langflow.template.field.base import TemplateField
@@ -57,7 +60,7 @@ class ChainFrontendNode(FrontendNode):
         if "key" in field.name:
             field.password = False
             field.show = False
-        if field.name in ["input_key", "output_key"]:
+        if field.name in ["input_key", "output_key", "input_variables", "output_variables"]:
             field.required = True
             field.show = True
             field.advanced = True
@@ -93,6 +96,9 @@ class ChainFrontendNode(FrontendNode):
             field.show = True
             field.advanced = True
             field.value = True
+        
+        if field.name == "chains":
+            field.multiline = True
 
 
 class SeriesCharacterChainNode(FrontendNode):

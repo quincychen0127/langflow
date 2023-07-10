@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0,'../../../')
+
 from typing import Any, Dict, List, Optional, Type
 
 from langflow.custom.customs import get_custom_nodes
