@@ -44,8 +44,10 @@ async def get_result_and_steps(langchain_object, message: str, **kwargs):
             output.get("intermediate_steps", []) if isinstance(output, dict) else []
         )
 
+        output_strings = [output[key] for key in output.keys() if key != 'input']
         result = (
-            output.get(langchain_object.output_keys[0])
+            # output.get(langchain_object.output_keys[0]) 
+            ' '.join(output_strings)
             if isinstance(output, dict)
             else output
         )

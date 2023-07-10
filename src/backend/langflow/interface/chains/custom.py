@@ -1,6 +1,7 @@
 from typing import Dict, Optional, Type, Union
 
 from langchain.chains import ConversationChain
+from langchain.chains.sequential import SequentialChain
 from langchain.memory.buffer import ConversationBufferMemory
 from langchain.schema import BaseMemory
 from langflow.interface.base import CustomChain
@@ -8,7 +9,15 @@ from pydantic import Field, root_validator
 from langchain.chains.question_answering import load_qa_chain
 from langflow.interface.utils import extract_input_variables_from_prompt
 from langchain.base_language import BaseLanguageModel
+from typing import Any, Dict, List, Optional, Union
 
+import yaml
+from pydantic import Field, root_validator, validator
+from langchain.callbacks.base import BaseCallbackManager
+from langchain.callbacks.manager import (
+    Callbacks,
+)
+from langflow.utils.logger import logger
 DEFAULT_SUFFIX = """"
 Current conversation:
 {history}
@@ -47,6 +56,9 @@ class BaseCustomConversationChain(ConversationChain):
         values["prompt"].template = values["template"]
         values["prompt"].input_variables = values["input_variables"]
         return values
+
+class BaseSequentialChain(SequentialChain):
+    """BaseSequentialChain is a chain you can use to chain LLM calls together."""
 
 
 class SeriesCharacterChain(BaseCustomConversationChain):
@@ -114,9 +126,10 @@ class CombineDocsChain(CustomChain):
         return super().run(*args, **kwargs)
 
 
-CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, CustomChain]]] = {
+CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain]]] = {
     "CombineDocsChain": CombineDocsChain,
     "SeriesCharacterChain": SeriesCharacterChain,
     "MidJourneyPromptChain": MidJourneyPromptChain,
     "TimeTravelGuideChain": TimeTravelGuideChain,
+    "BaseSequentialChain": BaseSequentialChain,
 }
