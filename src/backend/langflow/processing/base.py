@@ -48,7 +48,7 @@ async def get_result_and_steps(langchain_object, message: str, **kwargs):
         result = (
             # output.get(langchain_object.output_keys[0]) 
             ' '.join(output_strings)
-            if isinstance(output, dict)
+            if hasattr(langchain_object, "chains")
             else output
         )
         thought = format_actions(intermediate_steps) if intermediate_steps else ""
