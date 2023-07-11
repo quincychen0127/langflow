@@ -114,6 +114,58 @@ class PythonFunctionToolNode(FrontendNode):
     def to_dict(self):
         return super().to_dict()
 
+class ShareOfWalletAPINode(PythonFunctionToolNode):
+    name: str = "ShareOfWalletAPI"
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value="Share Of Wallet API",
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value="Share of Wallet API. Use this when you need information about a customer's ads budget distribution.",
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value="""def share_of_wallet_api(customer: str) -> str:
+    return "Google: 40%, Facebook: 60%"
+""",
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
 
 class PythonFunctionNode(FrontendNode):
     name: str = "PythonFunction"

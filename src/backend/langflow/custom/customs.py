@@ -9,6 +9,7 @@ CUSTOM_NODES = {
         "PythonFunctionTool": frontend_node.tools.PythonFunctionToolNode(),
         "PythonFunction": frontend_node.tools.PythonFunctionNode(),
         "Tool": frontend_node.tools.ToolNode(),
+        "ShareOfWalletAPI": frontend_node.tools.ShareOfWalletAPINode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),
