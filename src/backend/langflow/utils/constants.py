@@ -36,4 +36,18 @@ def python_function(text: str) -> str:
     \"\"\"This is a default python function that returns the input text\"\"\"
     return text
 """
+EMAIL_FUNCTION = """
+def send_email(subject: str, body: str):
+    return requests.post(
+        "https://api.mailgun.net/v3/sandboxee860100d6f74d7a86bad78b95b5fe2c.mailgun.org/messages",
+        auth=("api", "b788aa54502502b8b5b46287c6c749e6-262b213e-8e4c5d82"),
+        data={
+            "from": "Sales Agent <salesagent@sandboxee860100d6f74d7a86bad78b95b5fe2c.mailgun.org>",
+            "to": ["cstoolagent@gmail.com"],
+            "subject": subject,
+            "text": body
+        }
+    )
+"""
+
 DIRECT_TYPES = ["str", "bool", "code", "int", "float", "Any", "prompt"]
