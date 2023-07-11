@@ -268,9 +268,9 @@ class GetCustomerPocAPINode(PythonFunctionToolNode):
         ],
     )
 
-class CheckDoNotCallRegistryAPINode(PythonFunctionToolNode):
-    name: str = "CheckDoNotCallRegistryAPI"
-    description: str = "CheckDoNotCallRegistry API. Use this when you need to check if a phone number is in the Do Not Call registry."
+class OptOutCheckupToolAPINode(PythonFunctionToolNode):
+    name: str = "OptOutCheckupToolAPI"
+    description: str = "OptOutCheckupTool API. Use this when you need to check if a phone number is in the Opt-out registry."
     code: str = """def check_do_not_call_registry(phone_number: str) -> str:
     return "False"
 """

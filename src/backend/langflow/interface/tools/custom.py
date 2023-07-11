@@ -53,7 +53,7 @@ class ShareOfWalletAPI(PythonFunctionTool):
 class GetCustomerPocAPI(PythonFunctionTool):
     pass
 
-class CheckDoNotCallRegistryAPI(PythonFunctionTool):
+class OptOutCheckupToolAPI(PythonFunctionTool):
     pass
 
 class PythonFunction(Function):

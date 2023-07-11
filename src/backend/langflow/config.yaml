@@ -184,7 +184,7 @@ tools:
     documentation: ""
   GetCustomerPocAPI:
     documentation: ""
-  CheckDoNotCallRegistryAPI:
+  OptOutCheckupToolAPI:
     documentation: ""
   PythonFunction:
     documentation: ""
