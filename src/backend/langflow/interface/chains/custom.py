@@ -2,6 +2,7 @@ from typing import Dict, Optional, Type, Union
 
 from langchain.chains import ConversationChain
 from langchain.chains.sequential import SequentialChain
+from langchain.chains.transform import TransformChain
 from langchain.memory.buffer import ConversationBufferMemory
 from langchain.schema import BaseMemory
 from langflow.interface.base import CustomChain
@@ -9,7 +10,8 @@ from pydantic import Field, root_validator
 from langchain.chains.question_answering import load_qa_chain
 from langflow.interface.utils import extract_input_variables_from_prompt
 from langchain.base_language import BaseLanguageModel
-from typing import Any, Dict, List, Optional, Union
+from langflow.interface.importing.utils import get_function
+from typing import Any, Callable, Dict, List, Optional, Union
 
 import yaml
 from pydantic import Field, root_validator, validator
@@ -60,6 +62,18 @@ class BaseCustomConversationChain(ConversationChain):
 class BaseSequentialChain(SequentialChain):
     """BaseSequentialChain is a chain you can use to chain LLM calls together."""
 
+class SalesTransformChain(TransformChain):
+    input_variables: List[str]
+    output_variables: List[str]
+    code: str
+    function: Optional[Callable] = None
+
+    def ___init__(self, input_variables: List[str], output_variables: List[str], code: str):
+        self.input_variables = input_variables
+        self.output_variables = output_variables
+        self.code = code
+        self.func = get_function(self.code)
+        super().__init__(input_variables=input_variables, output_variables=output_variables, func=self.func)
 
 class SeriesCharacterChain(BaseCustomConversationChain):
     """SeriesCharacterChain is a chain you can use to have a conversation with a character from a series."""
@@ -126,10 +140,11 @@ class CombineDocsChain(CustomChain):
         return super().run(*args, **kwargs)
 
 
-CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain]]] = {
+CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain, TransformChain]]] = {
     "CombineDocsChain": CombineDocsChain,
     "SeriesCharacterChain": SeriesCharacterChain,
     "MidJourneyPromptChain": MidJourneyPromptChain,
     "TimeTravelGuideChain": TimeTravelGuideChain,
     "BaseSequentialChain": BaseSequentialChain,
+    "SalesTransformChain": SalesTransformChain,
 }

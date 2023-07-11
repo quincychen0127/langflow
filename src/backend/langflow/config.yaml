@@ -26,6 +26,8 @@ chains:
     documentation: ""
   BaseSequentialChain:
     documentation: ""
+  SalesTransformChain:
+    documentation: ""
   MidJourneyPromptChain:
     documentation: ""
   TimeTravelGuideChain:
