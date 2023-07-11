@@ -116,6 +116,7 @@ class PythonFunctionToolNode(FrontendNode):
 
 class ShareOfWalletAPINode(PythonFunctionToolNode):
     name: str = "ShareOfWalletAPI"
+    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
     template: Template = Template(
         type_name="PythonFunctionTool",
         fields=[
@@ -126,7 +127,7 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
                 is_list=False,
                 show=False,
                 multiline=False,
-                value="Share Of Wallet API",
+                value="ShareOfWalletAPI",
                 name="name",
                 advanced=False,
             ),
@@ -165,7 +166,6 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
             ),
         ],
     )
-    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
 
 class PythonFunctionNode(FrontendNode):
     name: str = "PythonFunction"
