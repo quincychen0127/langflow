@@ -176,14 +176,6 @@ toolkits:
   VectorStoreToolkit:
     documentation: ""
 tools:
-  Search:
-    documentation: ""
-  PAL-MATH:
-    documentation: ""
-  Calculator:
-    documentation: ""
-  Serper Search:
-    documentation: ""
   Tool:
     documentation: ""
   PythonFunctionTool:
@@ -191,50 +183,6 @@ tools:
   ShareOfWalletAPI:
     documentation: ""
   PythonFunction:
-    documentation: ""
-  JsonSpec:
-    documentation: ""
-  News API:
-    documentation: ""
-  TMDB API:
-    documentation: ""
-  Podcast API:
-    documentation: ""
-  QuerySQLDataBaseTool:
-    documentation: ""
-  InfoSQLDatabaseTool:
-    documentation: ""
-  ListSQLDatabaseTool:
-    documentation: ""
-  BingSearchRun:
-    documentation: ""
-  GoogleSearchRun:
-    documentation: ""
-  GoogleSearchResults:
-    documentation: ""
-  GoogleSerperRun:
-    documentation: ""
-  JsonListKeysTool:
-    documentation: ""
-  JsonGetValueTool:
-    documentation: ""
-  PythonREPLTool:
-    documentation: ""
-  PythonAstREPLTool:
-    documentation: ""
-  RequestsGetTool:
-    documentation: ""
-  RequestsPostTool:
-    documentation: ""
-  RequestsPatchTool:
-    documentation: ""
-  RequestsPutTool:
-    documentation: ""
-  RequestsDeleteTool:
-    documentation: ""
-  WikipediaQueryRun:
-    documentation: ""
-  WolframAlphaQueryRun:
     documentation: ""
 utilities:
   BingSearchAPIWrapper:
