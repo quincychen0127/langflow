@@ -12,6 +12,7 @@ CUSTOM_NODES = {
         "ShareOfWalletAPI": frontend_node.tools.ShareOfWalletAPINode(),
         "GetCustomerPocAPI": frontend_node.tools.GetCustomerPocAPINode(),
         "OptOutCheckupToolAPI": frontend_node.tools.OptOutCheckupToolAPINode(),
+        "ReportingAPI": frontend_node.tools.ReportingAPINode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

@@ -186,6 +186,8 @@ tools:
     documentation: ""
   OptOutCheckupToolAPI:
     documentation: ""
+  ReportingAPI:
+    documentation: ""
   PythonFunction:
     documentation: ""
 utilities:

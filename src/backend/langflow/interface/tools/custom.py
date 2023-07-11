@@ -56,6 +56,9 @@ class GetCustomerPocAPI(PythonFunctionTool):
 class OptOutCheckupToolAPI(PythonFunctionTool):
     pass
 
+class ReportingAPI(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 
