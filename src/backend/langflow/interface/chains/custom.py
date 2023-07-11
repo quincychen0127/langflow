@@ -65,15 +65,16 @@ class BaseSequentialChain(SequentialChain):
 class SalesTransformChain(TransformChain):
     input_variables: List[str]
     output_variables: List[str]
-    code: str
+    transform: str
     function: Optional[Callable] = None
 
-    def ___init__(self, input_variables: List[str], output_variables: List[str], code: str):
+    # @root_validator(pre=False)
+    def ___init__(self, input_variables: List[str], output_variables: List[str], transform: str):
         self.input_variables = input_variables
         self.output_variables = output_variables
-        self.code = code
+        self.transform = transform
         self.func = get_function(self.code)
-        super().__init__(input_variables=input_variables, output_variables=output_variables, func=self.func)
+        super().__init__(input_variables=input_variables, output_variables=output_variables, transform=self.func)
 
 class SeriesCharacterChain(BaseCustomConversationChain):
     """SeriesCharacterChain is a chain you can use to have a conversation with a character from a series."""
@@ -140,7 +141,7 @@ class CombineDocsChain(CustomChain):
         return super().run(*args, **kwargs)
 
 
-CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain, TransformChain]]] = {
+CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain, SalesTransformChain]]] = {
     "CombineDocsChain": CombineDocsChain,
     "SeriesCharacterChain": SeriesCharacterChain,
     "MidJourneyPromptChain": MidJourneyPromptChain,
