@@ -66,21 +66,10 @@ class BaseSequentialChain(SequentialChain):
 class SalesTransformChain(TransformChain):
     code_input: Optional[str]
 
-    # @root_validator(pre=False)
-    def __init__(self, input_variables: List[str], output_variables: List[str], code_input: str):
-        print("00000000000 test")
-        func = get_function(code_input)
-        # self.transform = Callable()
-        print("111111111 Calling super()...")
-        print(str(func))
-        # super(input_variables=input_variables, output_variables=output_variables, transform=func)
-        # super().__init__(input_variables=input_variables, output_variables=output_variables, transform=func)
-        print("111111111 Called super.")
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function(kwargs["code_input"])
+        super().__init__(*args, **kwargs)
 
-some_transform_chain = SalesTransformChain(input_variables=["testA"], output_variables=["testB"], code_input="""
-def sing():
-    print("woop woop")                                           
-""")
 
 class SeriesCharacterChain(BaseCustomConversationChain):
     """SeriesCharacterChain is a chain you can use to have a conversation with a character from a series."""

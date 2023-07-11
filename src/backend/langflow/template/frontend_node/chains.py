@@ -99,9 +99,7 @@ class ChainFrontendNode(FrontendNode):
         
         if field.name == "chains":
             field.multiline = True
-        
-        print(field.name)
-        print(name)
+
         if name == "SalesTransformChain" and field.name == "transform":
             field.show = False
             field.required = False
@@ -109,6 +107,7 @@ class ChainFrontendNode(FrontendNode):
         
         if name == "SalesTransformChain" and field.name == "code_input":
             field.show = True
+            field.multiline = True
 
 
 class SeriesCharacterChainNode(FrontendNode):
