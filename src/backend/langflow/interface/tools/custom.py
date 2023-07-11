@@ -50,6 +50,11 @@ class PythonFunctionTool(Function, Tool):
 class ShareOfWalletAPI(PythonFunctionTool):
     pass
 
+class GetCustomerPocAPI(PythonFunctionTool):
+    pass
+
+class CheckDoNotCallRegistryAPI(PythonFunctionTool):
+    pass
 
 class PythonFunction(Function):
     """Python function"""

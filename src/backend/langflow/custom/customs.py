@@ -10,6 +10,8 @@ CUSTOM_NODES = {
         "PythonFunction": frontend_node.tools.PythonFunctionNode(),
         "Tool": frontend_node.tools.ToolNode(),
         "ShareOfWalletAPI": frontend_node.tools.ShareOfWalletAPINode(),
+        "GetCustomerPocAPI": frontend_node.tools.GetCustomerPocAPINode(),
+        "CheckDoNotCallRegistryAPI": frontend_node.tools.CheckDoNotCallRegistryAPINode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

@@ -182,6 +182,10 @@ tools:
     documentation: ""
   ShareOfWalletAPI:
     documentation: ""
+  GetCustomerPocAPI:
+    documentation: ""
+  CheckDoNotCallRegistryAPI:
+    documentation: ""
   PythonFunction:
     documentation: ""
 utilities:

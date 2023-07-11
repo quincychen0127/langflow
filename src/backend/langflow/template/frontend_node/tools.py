@@ -113,13 +113,9 @@ class PythonFunctionToolNode(FrontendNode):
 
     def to_dict(self):
         return super().to_dict()
-
-class ShareOfWalletAPINode(PythonFunctionToolNode):
-    name: str = "ShareOfWalletAPI"
-    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
-    template: Template = Template(
-        type_name="PythonFunctionTool",
-        fields=[
+    
+def create_fields(name, description, code):
+    return [
             TemplateField(
                 field_type="str",
                 required=False,
@@ -127,7 +123,7 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
                 is_list=False,
                 show=False,
                 multiline=False,
-                value="ShareOfWalletAPI",
+                value=name,
                 name="name",
                 advanced=False,
             ),
@@ -138,7 +134,7 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
                 is_list=False,
                 show=False,
                 multiline=False,
-                value="Share of Wallet API. Use this when you need information about a customer's ads budget distribution.",
+                value=description,
                 name="description",
                 advanced=False,
             ),
@@ -148,9 +144,168 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
                 placeholder="",
                 is_list=False,
                 show=False,
-                value="""def share_of_wallet_api(customer: str) -> str:
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    
+class ShareOfWalletAPINode(PythonFunctionToolNode):
+    name: str = "ShareOfWalletAPI"
+    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
+    code: str = """def share_of_wallet_api(customer: str) -> str:
     return "Google: 40%, Facebook: 60%"
-""",
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+class GetCustomerPocAPINode(PythonFunctionToolNode):
+    name: str = "GetCustomerPocAPI"
+    description: str = "GetCustomerPoc API. Use this when you need to find a customer's POC."
+    code: str = """def get_customer_poc(customer: str) -> str:
+    return "email_address:hejinming@google.com, phone_number:6507722655"
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+class CheckDoNotCallRegistryAPINode(PythonFunctionToolNode):
+    name: str = "CheckDoNotCallRegistryAPI"
+    description: str = "CheckDoNotCallRegistry API. Use this when you need to check if a phone number is in the Do Not Call registry."
+    code: str = """def check_do_not_call_registry(phone_number: str) -> str:
+    return "False"
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
                 name="code",
                 advanced=False,
             ),
