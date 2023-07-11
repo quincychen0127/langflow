@@ -47,7 +47,7 @@ async def get_result_and_steps(langchain_object, message: str, **kwargs):
         output_strings = [output[key] for key in output.keys() if key != 'input']
         result = (
             # output.get(langchain_object.output_keys[0]) 
-            ' '.join(output_strings)
+            ' \n'.join(output_strings)
             if hasattr(langchain_object, "chains")
             else output
         )
