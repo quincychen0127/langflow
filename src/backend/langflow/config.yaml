@@ -1,18 +1,6 @@
 agents:
-  ZeroShotAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/how_to/custom_mrkl_agent"
-  JsonAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/toolkits/openapi"
-  CSVAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/toolkits/csv"
   AgentInitializer:
     documentation: "https://python.langchain.com/docs/modules/agents/agent_types/"
-  VectorStoreAgent:
-    documentation: ""
-  VectorStoreRouterAgent:
-    documentation: ""
-  SQLAgent:
-    documentation: ""
 chains:
   LLMChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/llm_chain"
@@ -40,89 +28,11 @@ chains:
     documentation: ""
   SequentialChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
-documentloaders:
-  AirbyteJSONLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/airbyte_json"
-  CoNLLULoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/conll-u"
-  CSVLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/csv"
-  UnstructuredEmailLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/email"
-  EverNoteLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/evernote"
-  FacebookChatLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/facebook_chat"
-  GutenbergLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/gutenberg"
-  BSHTMLLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/html"
-  UnstructuredHTMLLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/html"
-  UnstructuredMarkdownLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/markdown"
-  PyPDFDirectoryLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/pdf"
-  PyPDFLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/pdf"
-  UnstructuredPowerPointLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/microsoft_powerpoint"
-  SRTLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/subtitle"
-  TelegramChatLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/telegram"
-  TextLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/"
-  UnstructuredWordDocumentLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/microsoft_word"
-  WebBaseLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/web_base"
-  AZLyricsLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/azlyrics"
-  CollegeConfidentialLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/college_confidential"
-  HNLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/hacker_news"
-  IFixitLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/ifixit"
-  IMSDbLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/imsdb"
-  GitbookLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/gitbook"
-  ReadTheDocsLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/readthedocs_documentation"
-  SlackDirectoryLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/slack"
-  NotionDirectoryLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/notion"
-  DirectoryLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/how_to/file_directory"
-  GitLoader:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/git"
-embeddings:
-  OpenAIEmbeddings:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/text_embedding/integrations/openai"
-  HuggingFaceEmbeddings:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/text_embedding/integrations/sentence_transformers"
-  CohereEmbeddings:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/text_embedding/integrations/cohere"
 llms:
   OpenAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/openai"
   ChatOpenAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
-  LlamaCpp:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/llamacpp"
-  CTransformers:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/ctransformers"
-  Cohere:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/cohere"
-  Anthropic:
-    documentation: ""
-  ChatAnthropic:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/anthropic"
-  HuggingFaceHub:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/huggingface_hub"
   VertexAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/google_vertex_ai_palm"
   ###
@@ -132,49 +42,11 @@ llms:
   # ChatVertexAI:
   #   documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/google_vertex_ai_palm"
   ###
-memories:
-  # https://github.com/supabase-community/supabase-py/issues/482
-  # ZepChatMessageHistory:
-  #   documentation: "https://python.langchain.com/docs/modules/memory/integrations/zep_memory"
-  ConversationEntityMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/integrations/entity_memory_with_sqlite"
-  # https://github.com/hwchase17/langchain/issues/6091
-  # SQLiteEntityStore:
-  #   documentation: "https://python.langchain.com/docs/modules/memory/integrations/entity_memory_with_sqlite"
-  PostgresChatMessageHistory:
-    documentation: "https://python.langchain.com/docs/modules/memory/integrations/postgres_chat_message_history"
-  ConversationBufferMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/how_to/buffer"
-  ConversationSummaryMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/how_to/summary"
-  ConversationKGMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/how_to/kg"
-  ConversationBufferWindowMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/how_to/buffer_window"
-  VectorStoreRetrieverMemory:
-    documentation: "https://python.langchain.com/docs/modules/memory/how_to/vectorstore_retriever_memory"
-
 prompts:
   PromptTemplate:
     documentation: "https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/"
   ZeroShotPrompt:
     documentation: "https://python.langchain.com/docs/modules/agents/how_to/custom_mrkl_agent"
-textsplitters:
-  CharacterTextSplitter:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/character_text_splitter"
-  RecursiveCharacterTextSplitter:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/recursive_text_splitter"
-toolkits:
-  OpenAPIToolkit:
-    documentation: ""
-  JsonToolkit:
-    documentation: ""
-  VectorStoreInfo:
-    documentation: ""
-  VectorStoreRouterToolkit:
-    documentation: ""
-  VectorStoreToolkit:
-    documentation: ""
 tools:
   Tool:
     documentation: ""
@@ -189,45 +61,4 @@ tools:
   ReportingAPI:
     documentation: ""
   PythonFunction:
-    documentation: ""
-utilities:
-  BingSearchAPIWrapper:
-    documentation: ""
-  GoogleSearchAPIWrapper:
-    documentation: ""
-  GoogleSerperAPIWrapper:
-    documentation: ""
-  SearxResults:
-    documentation: ""
-  SearxSearchWrapper:
-    documentation: ""
-  SerpAPIWrapper:
-    documentation: ""
-  WikipediaAPIWrapper:
-    documentation: ""
-  WolframAlphaAPIWrapper:
-    documentation: ""
-retrievers:
-  MultiQueryRetriever:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/retrievers/how_to/MultiQueryRetriever"
-  # https://github.com/supabase-community/supabase-py/issues/482
-  # ZepRetriever:
-  #   documentation: "https://python.langchain.com/docs/modules/data_connection/retrievers/integrations/zep_memorystore"
-vectorstores:
-  Chroma:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/chroma"
-  Qdrant:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/qdrant"
-  Weaviate:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/weaviate"
-  FAISS:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/faiss"
-  Pinecone:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/pinecone"
-  SupabaseVectorStore:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/supabase"
-  MongoDBAtlasVectorSearch:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/mongodb_atlas_vector_search"
-wrappers:
-  RequestsWrapper:
     documentation: ""
