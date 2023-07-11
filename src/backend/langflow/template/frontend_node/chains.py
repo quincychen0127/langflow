@@ -257,3 +257,59 @@ class CombineDocsChainNode(FrontendNode):
     def format_field(field: TemplateField, name: Optional[str] = None) -> None:
         # do nothing and don't return anything
         pass
+
+class SalesTransformChainNode(FrontendNode):
+    name: str = "SalesTransformChain"
+    template: Template = Template(
+        type_name="SalesTransformChain",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=True,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="output_variables",
+            ),
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=True,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="ola",
+            ),
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=False,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="code",
+            )
+        ])
+    description = "Olay Olay -- olay olay 12"
+    base_classes: list[str] = [
+    ]
+
+    @staticmethod
+    def format_field(field: TemplateField, name: Optional[str] = None) -> None:
+        FrontendNode.format_field(field, name)
+
+        if field.name == "transform":
+            field.required = False
+            field.show = False
+
+    #def to_dict(self):
+    #    return super().to_dict()
+
+    #@staticmethod
+    #def format_field(field: TemplateField, name: Optional[str] = None) -> None:
+    #    # do nothing and don't return anything
+    #    pass

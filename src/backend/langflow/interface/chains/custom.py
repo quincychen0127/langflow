@@ -65,14 +65,14 @@ class BaseSequentialChain(SequentialChain):
 class SalesTransformChain(TransformChain):
     input_variables: List[str]
     output_variables: List[str]
-    transform: str
+    code: str
     function: Optional[Callable] = None
 
     # @root_validator(pre=False)
-    def ___init__(self, input_variables: List[str], output_variables: List[str], transform: str):
+    def ___init__(self, input_variables: List[str], output_variables: List[str], code: str):
         self.input_variables = input_variables
         self.output_variables = output_variables
-        self.transform = transform
+        self.code = code
         self.func = get_function(self.code)
         super().__init__(input_variables=input_variables, output_variables=output_variables, transform=self.func)
 

@@ -29,6 +29,7 @@ CUSTOM_NODES = {
         "TimeTravelGuideChain": frontend_node.chains.TimeTravelGuideChainNode(),
         "MidJourneyPromptChain": frontend_node.chains.MidJourneyPromptChainNode(),
         "load_qa_chain": frontend_node.chains.CombineDocsChainNode(),
+        "SalesTransformChain": frontend_node.chains.SalesTransformChainNode(), 
     },
 }
 
