@@ -79,4 +79,3 @@ class ChainCreator(LangChainTypeCreator):
 
 
 chain_creator = ChainCreator()
-print(chain_creator.get_signature("TransformChain"))

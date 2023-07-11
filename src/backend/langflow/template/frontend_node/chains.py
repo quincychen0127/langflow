@@ -99,7 +99,16 @@ class ChainFrontendNode(FrontendNode):
         
         if field.name == "chains":
             field.multiline = True
-
+        
+        print(field.name)
+        print(name)
+        if name == "SalesTransformChain" and field.name == "transform":
+            field.show = False
+            field.required = False
+            field.advanced = True
+        
+        if name == "SalesTransformChain" and field.name == "code_input":
+            field.show = True
 
 
 class SeriesCharacterChainNode(FrontendNode):
@@ -258,6 +267,8 @@ class CombineDocsChainNode(FrontendNode):
         # do nothing and don't return anything
         pass
 
+
+'''
 class SalesTransformChainNode(FrontendNode):
     name: str = "SalesTransformChain"
     template: Template = Template(
@@ -281,7 +292,7 @@ class SalesTransformChainNode(FrontendNode):
                 show=True,
                 advanced=False,
                 multiline=False,
-                name="ola",
+                name="input_variables",
             ),
             TemplateField(
                 field_type="str",
@@ -296,6 +307,9 @@ class SalesTransformChainNode(FrontendNode):
         ])
     description = "Olay Olay -- olay olay 12"
     base_classes: list[str] = [
+        "LLMChain",
+        "BaseCustomChain",
+        "Chain",
     ]
 
     @staticmethod
@@ -313,3 +327,4 @@ class SalesTransformChainNode(FrontendNode):
     #def format_field(field: TemplateField, name: Optional[str] = None) -> None:
     #    # do nothing and don't return anything
     #    pass
+'''

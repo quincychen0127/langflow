@@ -1,5 +1,6 @@
 from typing import Dict, Optional, Type, Union
 
+import inspect
 from langchain.chains import ConversationChain
 from langchain.chains.sequential import SequentialChain
 from langchain.chains.transform import TransformChain
@@ -63,18 +64,23 @@ class BaseSequentialChain(SequentialChain):
     """BaseSequentialChain is a chain you can use to chain LLM calls together."""
 
 class SalesTransformChain(TransformChain):
-    input_variables: List[str]
-    output_variables: List[str]
-    code: str
-    function: Optional[Callable] = None
+    code_input: Optional[str]
 
     # @root_validator(pre=False)
-    def ___init__(self, input_variables: List[str], output_variables: List[str], code: str):
-        self.input_variables = input_variables
-        self.output_variables = output_variables
-        self.code = code
-        self.func = get_function(self.code)
-        super().__init__(input_variables=input_variables, output_variables=output_variables, transform=self.func)
+    def __init__(self, input_variables: List[str], output_variables: List[str], code_input: str):
+        print("00000000000 test")
+        func = get_function(code_input)
+        # self.transform = Callable()
+        print("111111111 Calling super()...")
+        print(str(func))
+        # super(input_variables=input_variables, output_variables=output_variables, transform=func)
+        # super().__init__(input_variables=input_variables, output_variables=output_variables, transform=func)
+        print("111111111 Called super.")
+
+some_transform_chain = SalesTransformChain(input_variables=["testA"], output_variables=["testB"], code_input="""
+def sing():
+    print("woop woop")                                           
+""")
 
 class SeriesCharacterChain(BaseCustomConversationChain):
     """SeriesCharacterChain is a chain you can use to have a conversation with a character from a series."""
