@@ -47,7 +47,7 @@ class PythonFunctionTool(Function, Tool):
         self.func = get_function(self.code)
         super().__init__(name=name, description=description, func=self.func)
 
-class MarketingObjectivesTool(PythonFunctionTool):
+class GetMarketingObjectives(PythonFunctionTool):
     pass
 
 class GetCustomerPocAPI(PythonFunctionTool):
@@ -59,16 +59,16 @@ class OptOutCheckupToolAPI(PythonFunctionTool):
 class ReportingAPI(PythonFunctionTool):
     pass
 
-class GetPitchableLowHangingFruitWorkflow(PythonFunctionTool):
+class GetTopPitchableCustomer(PythonFunctionTool):
     pass
 
 class EmailAPI(PythonFunctionTool):
     pass
 
-class NextBestActionTool(PythonFunctionTool):
+class FetchNextBestAction(PythonFunctionTool):
     pass
 
-class AdwordsCampaignPerformanceTool(PythonFunctionTool):
+class GetAdsReportingData(PythonFunctionTool):
     pass
 
 class PythonFunction(Function):

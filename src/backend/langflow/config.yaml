@@ -52,19 +52,19 @@ tools:
     documentation: ""
   PythonFunctionTool:
     documentation: ""
-  MarketingObjectivesTool:
+  GetMarketingObjectives:
     documentation: ""
   GetCustomerPocAPI:
     documentation: ""
-  GetPitchableLowHangingFruitWorkflow:
+  GetTopPitchableCustomer:
     documentation: ""
   OptOutCheckupToolAPI:
     documentation: ""
   ReportingAPI:
     documentation: ""
-  NextBestActionTool:
+  FetchNextBestAction:
     documentation: ""
-  AdwordsCampaignPerformanceTool:
+  GetAdsReportingData:
     documentation: ""
   PythonFunction:
     documentation: ""

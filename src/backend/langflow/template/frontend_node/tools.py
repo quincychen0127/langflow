@@ -160,8 +160,8 @@ def create_fields(name, description, code):
             ),
         ],
     
-class MarketingObjectivesToolNode(PythonFunctionToolNode):
-    name: str = "MarketingObjectivesTool"
+class GetMarketingObjectivesNode(PythonFunctionToolNode):
+    name: str = "GetMarketingObjectives"
     description: str = "MarketingObjective API. Use this when you to find the marketing objective of a customer. You should pass the customer_name as the parameter to this tool."
     code: str = """def marketing_objective_api(customer_name: str) -> str:
     return "increase customer leads"
@@ -268,9 +268,9 @@ class ReportingAPINode(PythonFunctionToolNode):
         ],
     )
 
-class AdwordsCampaignPerformanceToolNode(PythonFunctionToolNode):
-    name: str = "AdwordsCampaignPerformanceTool"
-    description: str = "AdwordsCampaignPerformanceTool API. Use this when you need to find the campaign performance of a customer. You should pass the customer_name as the parameter to this tool."
+class GetAdsReportingDataNode(PythonFunctionToolNode):
+    name: str = "GetAdsReportingData"
+    description: str = "Useful to find the campaign performance of a customer. Pass the customer_name as the parameter to this tool."
     code: str = """def adwords_campaign_performance(customer_name: str) -> str:
     return "customer_name: Netally, cpc: 0.5 USD"
 """
@@ -322,9 +322,9 @@ class AdwordsCampaignPerformanceToolNode(PythonFunctionToolNode):
         ],
     )
 
-class NextBestActionToolNode(PythonFunctionToolNode):
-    name: str = "NextBestActionTool"
-    description: str = "NextBestActionToolNode API. Use this when you need to find an ads product to suggest to the customer. You should pass the customer_name as the parameter to this tool."
+class FetchNextBestActionNode(PythonFunctionToolNode):
+    name: str = "FetchNextBestAction"
+    description: str = "Useful to find an ads product to suggest to the customer. Pass the customer_name as the parameter to this tool."
     code: str = """def next_best_action(customer_name: str) -> str:
     return "customer_name: Netally, ads_product: PMax, rationale: cpc is too high due to incorrect manual config. PMax will help you optimize your ads spend."
 """
@@ -376,11 +376,11 @@ class NextBestActionToolNode(PythonFunctionToolNode):
         ],
     )
 
-class GetPitchableLowHangingFruitWorkflowNode(PythonFunctionToolNode):
-    name: str = "GetPitchableLowHangingFruitWorkflow"
-    description: str = "GetPitchableLowHangingFruitWorkflow API. Use this when you need to find the pitchable low hanging fruit customers. You should pass the number of customers to return as parameter to this tool."
+class GetTopPitchableCustomerNode(PythonFunctionToolNode):
+    name: str = "GetTopPitchableCustomer"
+    description: str = "Useful to find the pitchable low hanging fruit customers. Pass the number of customers to return as parameter to this tool."
     code: str = """def pitchable_low_hanging_fruit_workflow(count: str) -> str:
-    return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@google.com, phone: 1234567890"
+    return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@gmail.com, phone: 1234567890"
 """
     template: Template = Template(
         type_name="PythonFunctionTool",

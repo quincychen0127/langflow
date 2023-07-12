@@ -9,21 +9,21 @@ from langchain.agents.load_tools import (
 from langchain.tools.json.tool import JsonSpec
 
 from langflow.interface.importing.utils import import_class
-from langflow.interface.tools.custom import PythonFunctionTool, PythonFunction, MarketingObjectivesTool, GetCustomerPocAPI, OptOutCheckupToolAPI, ReportingAPI, GetPitchableLowHangingFruitWorkflow, EmailAPI, NextBestActionTool, AdwordsCampaignPerformanceTool
+from langflow.interface.tools.custom import PythonFunctionTool, PythonFunction, GetMarketingObjectives, GetCustomerPocAPI, OptOutCheckupToolAPI, ReportingAPI, GetTopPitchableCustomer, EmailAPI, FetchNextBestAction, GetAdsReportingData
 
 FILE_TOOLS = {"JsonSpec": JsonSpec}
 CUSTOM_TOOLS = {
     "Tool": Tool,
     "PythonFunctionTool": PythonFunctionTool,
     "PythonFunction": PythonFunction,
-    "MarketingObjectivesTool": MarketingObjectivesTool,
+    "GetMarketingObjectives": GetMarketingObjectives,
     "GetCustomerPocAPI": GetCustomerPocAPI,
     "OptOutCheckupToolAPI": OptOutCheckupToolAPI,
     "ReportingAPI": ReportingAPI,
-    "GetPitchableLowHangingFruitWorkflow": GetPitchableLowHangingFruitWorkflow,
+    "GetTopPitchableCustomer": GetTopPitchableCustomer,
     "EmailAPI": EmailAPI,
-    "NextBestActionTool": NextBestActionTool,
-    "AdwordsCampaignPerformanceTool": AdwordsCampaignPerformanceTool,
+    "FetchNextBestAction": FetchNextBestAction,
+    "GetAdsReportingData": GetAdsReportingData,
 }
 
 OTHER_TOOLS = {tool: import_class(f"langchain.tools.{tool}") for tool in tools.__all__}
