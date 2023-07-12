@@ -216,9 +216,9 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
 
 class ReportingAPINode(PythonFunctionToolNode):
     name: str = "ReportingAPI"
-    description: str = "Reporting API. Use this when you need information about industry average spending."
-    code: str = """def reporting_api(customer: str) -> str:
-    return "industry average: 10 million USD"
+    description: str = "Reporting API. Use this when you need to find the low hanging fruit customers."
+    code: str = """def reporting_api(count: str) -> str:
+    return "customer_name: Netally, spending: 10 million"
 """
     template: Template = Template(
         type_name="PythonFunctionTool",
@@ -268,11 +268,66 @@ class ReportingAPINode(PythonFunctionToolNode):
         ],
     )
 
+class GetPitchableLowHangingFruitWorkflowNode(PythonFunctionToolNode):
+    name: str = "GetPitchableLowHangingFruitWorkflow"
+    description: str = "GetPitchableLowHangingFruitWorkflow API. Use this when you need to find the pitchable low hanging fruit customers."
+    code: str = """def pitchable_low_hanging_fruit_workflow(count: str) -> str:
+    return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@google.com, phone: 1234567890"
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+
 class GetCustomerPocAPINode(PythonFunctionToolNode):
     name: str = "GetCustomerPocAPI"
     description: str = "GetCustomerPoc API. Use this when you need to find a customer's POC."
     code: str = """def get_customer_poc(customer: str) -> str:
-    return "email_address:hejinming@google.com, phone_number:6507722655"
+    return "email_address:hejinming@google.com, phone_number:123456789"
 """
     template: Template = Template(
         type_name="PythonFunctionTool",

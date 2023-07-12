@@ -13,6 +13,7 @@ CUSTOM_NODES = {
         "GetCustomerPocAPI": frontend_node.tools.GetCustomerPocAPINode(),
         "OptOutCheckupToolAPI": frontend_node.tools.OptOutCheckupToolAPINode(),
         "ReportingAPI": frontend_node.tools.ReportingAPINode(),
+        "GetPitchableLowHangingFruitWorkflow": frontend_node.tools.GetPitchableLowHangingFruitWorkflowNode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

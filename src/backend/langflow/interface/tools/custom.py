@@ -59,6 +59,9 @@ class OptOutCheckupToolAPI(PythonFunctionTool):
 class ReportingAPI(PythonFunctionTool):
     pass
 
+class GetPitchableLowHangingFruitWorkflow(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 
