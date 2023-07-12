@@ -108,6 +108,12 @@ class ChainFrontendNode(FrontendNode):
         if name == "SalesTransformChain" and field.name == "code_input":
             field.show = True
             field.multiline = True
+        
+        if name in ["FindTargetCompany", "FindPoc", "CheckDoNotCallRegistry"] and field.name in ["output_variables", "input_variables", "transform", "memory"] :
+            field.show = False
+            field.required = False
+            field.advanced = True
+
 
 
 class SeriesCharacterChainNode(FrontendNode):

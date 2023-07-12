@@ -28,6 +28,12 @@ chains:
     documentation: ""
   SalesTransformChain:
     documentation: ""
+  FindPoc:
+    documentation: ""
+  FindTargetCompany:
+    documentation: ""
+  CheckDoNotCallRegistry:
+    documentation: ""
   MidJourneyPromptChain:
     documentation: ""
   TimeTravelGuideChain:

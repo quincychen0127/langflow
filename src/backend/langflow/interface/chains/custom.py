@@ -70,6 +70,33 @@ class SalesTransformChain(TransformChain):
         kwargs["transform"] = get_function(kwargs["code_input"])
         super().__init__(*args, **kwargs)
 
+class FindTargetCompany(TransformChain):
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_target(input_dict: dict) -> dict:
+    return {"company": "The targeted company we found is: Alphabet."}
+    """)
+        kwargs["input_variables"] = ["text"]
+        kwargs["output_variables"] = ["company"]
+        super().__init__(*args, **kwargs)
+
+class FindPoc(TransformChain):
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_customer_poc(input_dict: dict) -> dict:
+    return {"poc_result": "The contact information we found for the target company is as follows: The email is hejinming@google.com and the phone number is 6507722655."}
+    """)
+        kwargs["input_variables"] = ["company"]
+        kwargs["output_variables"] = ["poc_result"]
+        super().__init__(*args, **kwargs)
+
+class CheckDoNotCallRegistry(TransformChain):
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_oct(input_dict: dict) -> dict:
+    return {"oct_result": "We called the OCT API and found no restrictions for contacting this customer. OCT Result: False"}
+    """)
+        kwargs["input_variables"] = ["poc_result"]
+        kwargs["output_variables"] = ["oct_result"]
+        super().__init__(*args, **kwargs)
+
 
 class SeriesCharacterChain(BaseCustomConversationChain):
     """SeriesCharacterChain is a chain you can use to have a conversation with a character from a series."""
@@ -143,4 +170,7 @@ CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomCh
     "TimeTravelGuideChain": TimeTravelGuideChain,
     "BaseSequentialChain": BaseSequentialChain,
     "SalesTransformChain": SalesTransformChain,
+    "FindTargetCompany": FindTargetCompany,
+    "FindPoc": FindPoc,
+    "CheckDoNotCallRegistry": CheckDoNotCallRegistry,
 }
