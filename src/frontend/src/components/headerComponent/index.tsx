@@ -34,6 +34,7 @@ export default function Header() {
       setStars(starsCount);
     }
     fetchStars();
+    setDark(true);
   }, []);
   return (
     <div className="header-arrangement">
@@ -45,100 +46,26 @@ export default function Header() {
           <MenuBar flows={flows} tabId={tabId} />
         )}
       </div>
-      <div className="round-button-div">
-        <Link to="/">
-          <Button
-            className="gap-2"
-            variant={location.pathname === "/" ? "primary" : "secondary"}
-            size="sm"
-          >
-            <Home className="h-4 w-4" />
-            <div className="flex-1">{USER_PROJECTS_HEADER}</div>
-          </Button>
-        </Link>
-        <Link to="/community">
-          <Button
-            className="gap-2"
-            variant={
-              location.pathname === "/community" ? "primary" : "secondary"
-            }
-            size="sm"
-          >
-            <Users2 className="h-4 w-4" />
-            <div className="flex-1">Community Examples</div>
-          </Button>
-        </Link>
+    
+      
+      <div style={{
+        color: "white",
+        fontFamily: "Monoton",
+        textTransform: "uppercase",
+        textShadow: "0 0 60px #ffffff,0 0 30px #009000,0 0 5px #0000ff",
+        backgroundColor: "#131516",
+        borderRadius: "10%",
+        padding: "15px",
+        borderColor: "rgb(126, 117, 103)",
+        borderWidth: "1px",
+        marginTop: "40px",
+        whiteSpace: "nowrap",
+        zIndex: "10",
+      }}>
+        <h1 className = "text-7xl">007 WORKBENCH</h1>
       </div>
-      <div className="header-end-division">
-        <div className="header-end-display">
-          <a
-            href="https://github.com/logspace-ai/langflow"
-            target="_blank"
-            rel="noreferrer"
-            className="header-github-link"
-          >
-            <FaGithub className="mr-2 h-5 w-5" />
-            Star
-            <div className="header-github-display">
-              {stars}
-            </div>
-          </a>
-          <a
-            href="https://twitter.com/logspace_ai"
-            target="_blank"
-            rel="noreferrer"
-            className="text-muted-foreground"
-          >
-            <FaTwitter className="side-bar-button-size" />
-          </a>
-          <a
-            href="https://discord.gg/EqksyE2EX9"
-            target="_blank"
-            rel="noreferrer"
-            className="text-muted-foreground"
-          >
-            <FaDiscord className="side-bar-button-size" />
-          </a>
 
-          <Separator orientation="vertical" />
-          <button
-            className="extra-side-bar-save-disable"
-            onClick={() => {
-              setDark(!dark);
-            }}
-          >
-            {dark ? (
-              <SunIcon className="side-bar-button-size" />
-            ) : (
-              <MoonIcon className="side-bar-button-size" />
-            )}
-          </button>
-          <button
-            className="extra-side-bar-save-disable relative"
-            onClick={(event: React.MouseEvent<HTMLElement>) => {
-              setNotificationCenter(false);
-              const { top, left } = (
-                event.target as Element
-              ).getBoundingClientRect();
-              openPopUp(
-                <>
-                  <div
-                    className="absolute z-10"
-                    style={{ top: top + 34, left: left - AlertWidth }}
-                  >
-                    <AlertDropdown />
-                  </div>
-                  <div className="header-notifications-box"></div>
-                </>
-              );
-            }}
-          >
-            {notificationCenter && (
-              <div className="header-notifications"></div>
-            )}
-            <Bell className="side-bar-button-size" aria-hidden="true" />
-          </button>
-        </div>
+      <div className="header-end-division">
       </div>
     </div>
   );

@@ -317,7 +317,7 @@ The cursor: default; property value restores the browser's default cursor style 
     @apply h-10 w-10 rounded p-1
   }
   .generic-node-tooltip-div {
-    @apply ml-2 truncate
+    @apply ml-2 truncate font-bold
   }
   .generic-node-validation-div {
     @apply max-h-96 overflow-auto
@@ -352,7 +352,7 @@ The cursor: default; property value restores the browser's default cursor style 
     @apply hover:text-accent-foreground hover:transition-all
   }
   .generic-node-desc {
-    @apply h-full w-full py-5 text-foreground
+    @apply h-full w-full py-5 text-foreground font-bold
   }
   .generic-node-desc-text {
     @apply w-full px-5 pb-3 text-sm text-muted-foreground
@@ -395,7 +395,7 @@ The cursor: default; property value restores the browser's default cursor style 
   }
 
   .card-component-title-display {
-    @apply round-button-div flex-max-width
+    @apply round-button-div flex-max-width font-bold
   }
   .card-component-image {
     @apply flex h-7 w-7 items-center justify-center rounded-full text-2xl
