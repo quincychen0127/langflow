@@ -171,13 +171,6 @@ class InitializeAgentNode(FrontendNode):
                 advanced=False,
             ),
             TemplateField(
-                field_type="BaseChatMemory",
-                required=False,
-                show=True,
-                name="memory",
-                advanced=False,
-            ),
-            TemplateField(
                 field_type="Tool",
                 required=False,
                 show=True,

@@ -83,8 +83,8 @@ def instantiate_based_on_type(class_object, base_type, node_type, params):
         return instantiate_llm(node_type, class_object, params)
     elif base_type == "retrievers":
         return instantiate_retriever(node_type, class_object, params)
-    elif base_type == "memory":
-        return instantiate_memory(node_type, class_object, params)
+    #elif base_type == "memory":
+    #    return instantiate_memory(node_type, class_object, params)
     else:
         return class_object(**params)
 
