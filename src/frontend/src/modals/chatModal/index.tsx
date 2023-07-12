@@ -377,12 +377,6 @@ export default function ChatModal({
                     ))
                   ) : (
                     <div className="chat-modal-dialog-span-box">
-                      <span>
-                        👋{" "}
-                        <span className="text-lg  text-muted-foreground">
-                          Langflow Chat
-                        </span>
-                      </span>
                       <br />
                       <div className="chat-modal-dialog-desc">
                         <span className="text-base text-ring">

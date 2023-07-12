@@ -100,6 +100,26 @@ class ChainFrontendNode(FrontendNode):
         if field.name == "chains":
             field.multiline = True
 
+        if name == "SalesTransformChain" and field.name == "transform":
+            field.show = False
+            field.required = False
+            field.advanced = True
+        
+        if name == "SalesTransformChain" and field.name == "code_input":
+            field.show = True
+            field.multiline = True
+        
+        if name in ["FindTargetCompany", "FindPoc", "CheckDoNotCallRegistry"] and field.name in ["output_variables", "input_variables", "transform", "memory"] :
+            field.show = False
+            field.required = False
+            field.advanced = True
+        
+        if name == "SequentialChain" and field.name == "memory":
+            field.show = False
+            field.required = False
+            field.advanced = True
+
+
 
 class SeriesCharacterChainNode(FrontendNode):
     name: str = "SeriesCharacterChain"
@@ -256,3 +276,65 @@ class CombineDocsChainNode(FrontendNode):
     def format_field(field: TemplateField, name: Optional[str] = None) -> None:
         # do nothing and don't return anything
         pass
+
+
+'''
+class SalesTransformChainNode(FrontendNode):
+    name: str = "SalesTransformChain"
+    template: Template = Template(
+        type_name="SalesTransformChain",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=True,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="output_variables",
+            ),
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=True,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="input_variables",
+            ),
+            TemplateField(
+                field_type="str",
+                required=True,
+                placeholder="",
+                is_list=False,
+                show=True,
+                advanced=False,
+                multiline=False,
+                name="code",
+            )
+        ])
+    description = "Olay Olay -- olay olay 12"
+    base_classes: list[str] = [
+        "LLMChain",
+        "BaseCustomChain",
+        "Chain",
+    ]
+
+    @staticmethod
+    def format_field(field: TemplateField, name: Optional[str] = None) -> None:
+        FrontendNode.format_field(field, name)
+
+        if field.name == "transform":
+            field.required = False
+            field.show = False
+
+    #def to_dict(self):
+    #    return super().to_dict()
+
+    #@staticmethod
+    #def format_field(field: TemplateField, name: Optional[str] = None) -> None:
+    #    # do nothing and don't return anything
+    #    pass
+'''

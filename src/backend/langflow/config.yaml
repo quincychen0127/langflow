@@ -12,6 +12,16 @@ chains:
     documentation: ""
   SeriesCharacterChain:
     documentation: ""
+  BaseSequentialChain:
+    documentation: ""
+  SalesTransformChain:
+    documentation: ""
+  FindPoc:
+    documentation: ""
+  FindTargetCompany:
+    documentation: ""
+  CheckDoNotCallRegistry:
+    documentation: ""
   MidJourneyPromptChain:
     documentation: ""
   TimeTravelGuideChain:
@@ -28,6 +38,11 @@ chains:
     documentation: ""
   SequentialChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
+  SimpleSequentialChain:
+    documentation: "https://python.langchain.com/docs/modules/chains/foundational/sequential_chains"
+  TransformChain:
+    documentation: "https://python.langchain.com/docs/modules/chains/foundational/transformation"
+
 llms:
   OpenAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/openai"
@@ -42,6 +57,7 @@ llms:
   # ChatVertexAI:
   #   documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/google_vertex_ai_palm"
   ###
+
 prompts:
   PromptTemplate:
     documentation: "https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/"
@@ -69,4 +85,28 @@ tools:
   PlannerAgent:
     documentation: ""
   PythonFunction:
+    documentation: ""
+  GoogleSerperRun:
+    documentation: ""
+  JsonListKeysTool:
+    documentation: ""
+  JsonGetValueTool:
+    documentation: ""
+  PythonREPLTool:
+    documentation: ""
+  PythonAstREPLTool:
+    documentation: ""
+  RequestsGetTool:
+    documentation: ""
+  RequestsPostTool:
+    documentation: ""
+  RequestsPatchTool:
+    documentation: ""
+  RequestsPutTool:
+    documentation: ""
+  RequestsDeleteTool:
+    documentation: ""
+  WikipediaQueryRun:
+    documentation: ""
+  WolframAlphaQueryRun:
     documentation: ""

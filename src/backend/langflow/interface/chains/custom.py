@@ -1,6 +1,9 @@
 from typing import Dict, Optional, Type, Union
 
+import inspect
 from langchain.chains import ConversationChain
+from langchain.chains.sequential import SequentialChain
+from langchain.chains.transform import TransformChain
 from langchain.memory.buffer import ConversationBufferMemory
 from langchain.schema import BaseMemory
 from langflow.interface.base import CustomChain
@@ -8,7 +11,16 @@ from pydantic import Field, root_validator
 from langchain.chains.question_answering import load_qa_chain
 from langflow.interface.utils import extract_input_variables_from_prompt
 from langchain.base_language import BaseLanguageModel
+from langflow.interface.importing.utils import get_function
+from typing import Any, Callable, Dict, List, Optional, Union
 
+import yaml
+from pydantic import Field, root_validator, validator
+from langchain.callbacks.base import BaseCallbackManager
+from langchain.callbacks.manager import (
+    Callbacks,
+)
+from langflow.utils.logger import logger
 DEFAULT_SUFFIX = """"
 Current conversation:
 {history}
@@ -47,6 +59,45 @@ class BaseCustomConversationChain(ConversationChain):
         values["prompt"].template = values["template"]
         values["prompt"].input_variables = values["input_variables"]
         return values
+
+class BaseSequentialChain(SequentialChain):
+    """BaseSequentialChain is a chain you can use to chain LLM calls together."""
+
+class SalesTransformChain(TransformChain):
+    code_input: Optional[str]
+
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function(kwargs["code_input"])
+        super().__init__(*args, **kwargs)
+
+class FindTargetCompany(TransformChain):
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_target(input_dict: dict) -> dict:
+    return {"company": "The targeted company we found is: Netally."}
+    """)
+        kwargs["input_variables"] = ["text"]
+        kwargs["output_variables"] = ["company"]
+        super().__init__(*args, **kwargs)
+
+class FindPoc(TransformChain):
+    """FindPoc finds a Person Of Contact for the inputted company."""
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_customer_poc(input_dict: dict) -> dict:
+    return {"poc_result": "The contact information we found for the target company is as follows: The email is hejinming@google.com and the phone number is 6507722655."}
+    """)
+        kwargs["input_variables"] = ["company"]
+        kwargs["output_variables"] = ["poc_result"]
+        super().__init__(*args, **kwargs)
+
+class CheckDoNotCallRegistry(TransformChain):
+    """Calls the OCT API to determine if the POC may be contacted."""    
+    def __init__(self, *args, **kwargs):
+        kwargs["transform"] = get_function("""def get_oct(input_dict: dict) -> dict:
+    return {"oct_result": "We called the OCT API and found no restrictions for contacting this customer. OCT Result: False"}
+    """)
+        kwargs["input_variables"] = ["poc_result"]
+        kwargs["output_variables"] = ["oct_result"]
+        super().__init__(*args, **kwargs)
 
 
 class SeriesCharacterChain(BaseCustomConversationChain):
@@ -114,9 +165,14 @@ class CombineDocsChain(CustomChain):
         return super().run(*args, **kwargs)
 
 
-CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, CustomChain]]] = {
+CUSTOM_CHAINS: Dict[str, Type[Union[ConversationChain, SequentialChain, CustomChain, SalesTransformChain]]] = {
     "CombineDocsChain": CombineDocsChain,
     "SeriesCharacterChain": SeriesCharacterChain,
     "MidJourneyPromptChain": MidJourneyPromptChain,
     "TimeTravelGuideChain": TimeTravelGuideChain,
+    "BaseSequentialChain": BaseSequentialChain,
+    "SalesTransformChain": SalesTransformChain,
+    "FindTargetCompany": FindTargetCompany,
+    "FindPoc": FindPoc,
+    "CheckDoNotCallRegistry": CheckDoNotCallRegistry,
 }

@@ -36,56 +36,7 @@ export default function CommunityPage() {
   useEffect(() => {
     handleExamples();
   }, []);
-  return (
-    <div className="community-page-arrangement">
-      <div className="community-page-nav-arrangement">
-        <span className="community-page-nav-title">
-          <Users2 className="w-6" />
-          Community Examples
-        </span>
-        <div className="community-page-nav-button">
-          <a
-            href="https://github.com/logspace-ai/langflow_examples"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Button variant="primary">
-              <GithubIcon className="main-page-nav-button" />
-              Add Your Example
-            </Button>
-          </a>
-        </div>
-      </div>
-      <span className="community-page-description-text">
-        Discover and learn from shared examples by the Langflow community. We
-        welcome new example contributions that can help our community explore
-        new and powerful features.
-      </span>
-      <div className="community-pages-flows-panel">
-        {!loadingExamples &&
-          examples.map((flow, idx) => (
-            <CardComponent
-              key={idx}
-              flow={flow}
-              id={flow.id}
-              button={
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="whitespace-nowrap "
-                  onClick={() => {
-                    addFlow(flow, true).then((id) => {
-                      navigate("/flow/" + id);
-                    });
-                  }}
-                >
-                  <GitFork className="main-page-nav-button" />
-                  Fork Example
-                </Button>
-              }
-            />
-          ))}
-      </div>
-    </div>
+  return (""
+    
   );
 }
