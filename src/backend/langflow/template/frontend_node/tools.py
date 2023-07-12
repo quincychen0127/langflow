@@ -217,7 +217,7 @@ class GetMarketingObjectivesNode(PythonFunctionToolNode):
 PLAN = "Here are steps to make a low hanging fruit pitch to a Google ads customer. \
 Step 1. Identify the top pitchable customer company, find its POC.\
 Step 2. Check the customer's campaign performance metrics and product recommendations from the Next Best Action engine. Do any Google ads product help them better achieve their objectives? \
-(optional) Step 3. If applicable, draft a short email (no more than 50 words) to the customer company to recommend a Google ads product.\
+Step 3. Draft a short email (no more than 50 words) to the customer company to recommend a Google ads product.\
 Step 4. Give TL;DR for each step."
 
 class PlannerAgentNode(PythonFunctionToolNode):

@@ -1,5 +1,5 @@
 agents:
-  AgentInitializer:
+  SalesAgent:
     documentation: "https://python.langchain.com/docs/modules/agents/agent_types/"
 chains:
   LLMChain:

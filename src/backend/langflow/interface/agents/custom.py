@@ -283,12 +283,12 @@ class VectorStoreRouterAgent(CustomAgentExecutor):
         return super().run(*args, **kwargs)
 
 
-class InitializeAgent(CustomAgentExecutor):
-    """Implementation of AgentInitializer function"""
+class SalesAgentInit(CustomAgentExecutor):
+    """Implementation of SalesAgent function"""
 
     @staticmethod
     def function_name():
-        return "AgentInitializer"
+        return "SalesAgent"
 
     @classmethod
     def initialize(
@@ -312,7 +312,6 @@ class InitializeAgent(CustomAgentExecutor):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        kwargs["text"] = "Can you make a plan for the following problem and execute it? The problem is " + kwargs["text"] + " Please use the tools you have to execute them as well."
 
     def run(self, *args, **kwargs):
         return super().run(*args, **kwargs)
@@ -321,7 +320,7 @@ class InitializeAgent(CustomAgentExecutor):
 CUSTOM_AGENTS = {
     "JsonAgent": JsonAgent,
     "CSVAgent": CSVAgent,
-    "AgentInitializer": InitializeAgent,
+    "SalesAgent": SalesAgentInit,
     "VectorStoreAgent": VectorStoreAgent,
     "VectorStoreRouterAgent": VectorStoreRouterAgent,
     "SQLAgent": SQLAgent,

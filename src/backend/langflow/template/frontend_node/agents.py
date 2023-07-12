@@ -153,9 +153,9 @@ class CSVAgentNode(FrontendNode):
         return super().to_dict()
 
 
-class InitializeAgentNode(FrontendNode):
-    name: str = "AgentInitializer"
-    display_name: str = "AgentInitializer"
+class SalesAgentInitNode(FrontendNode):
+    name: str = "SalesAgent"
+    display_name: str = "SalesAgent"
     template: Template = Template(
         type_name="initialize_agent",
         fields=[
