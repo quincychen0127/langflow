@@ -74,6 +74,15 @@ class GetAdsReportingData(PythonFunctionTool):
 class PlannerAgent(PythonFunctionTool):
     pass
 
+class SalesOutreachAgent(PythonFunctionTool):
+    pass
+
+class SalesContextAgent(PythonFunctionTool):
+    pass
+
+class AdwordsPerformanceAgent(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 

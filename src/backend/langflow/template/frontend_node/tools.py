@@ -220,10 +220,16 @@ Step 2. Check the customer's campaign performance metrics and product recommenda
 Step 3. Draft a short email (no more than 50 words) to the customer company to recommend a Google ads product.\
 Step 4. Give TL;DR for each step."
 
+PLAN2 = "Here are steps to make a recommendation. \
+Step 1. Check the  Adwords Performance for the client. \
+Step 2. Check the Sales Context for the client and relevant recommendation \
+Step 3. Get Sales Outreach information including the name of point of contact and the email adress \
+Step 4. Draft an email to the point of contact with relevant recommendaton."
+
 class PlannerAgentNode(PythonFunctionToolNode):
     name: str = "PlannerAgent"
     description: str = "Useful to make a plan to solve a problem. Pass the problem as the parameter."
-    code: str = f"def make_plans(problem: str) -> str: return \"{PLAN}\""
+    code: str = f"def make_plans(problem: str) -> str: return \"{PLAN2}\""
     template: Template = Template(
         type_name="PythonFunctionTool",
         fields=[
@@ -649,6 +655,167 @@ class EmailAPINode(PythonFunctionToolNode):
         ],
     )
 
+class SalesOutreachAgentNode(PythonFunctionToolNode):
+    name: str = "SalesOutreachAgent"
+    description: str = "SalesOutreachAgent that can give you the information about customer name, spending, and poc information."
+    code: str = """def sales_outreach(count: str) -> str:
+    return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@gmail.com, phone: 1234567890"
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+class SalesContextAgentNode(PythonFunctionToolNode):
+    name: str = "SalesContextAgent"
+    description: str = "SalesContextAgent that can help you get the sales context about a customer like marketing objective and recommendation."
+    code: str = """def get_sales_context(customer_name: str) -> str:
+    return "The customer is Netally, and their marketing objective is to maximize conversions. Currently they have conversion tracking enabled and is manually setting CPC. One recommendation is they could Adopt Smart Bidding (specifically “maximize conversions” bid strategy) to maximize conversions on relevant queries."
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+class AdwordsPerformanceAgentNode(PythonFunctionToolNode):
+    name: str = "AdwordsPerformanceAgent"
+    description: str = "AdwordsPerformanceAgent that can help you get information about their customer's performance."
+    code: str = """def get_adwords_perf(customer_name: str) -> str:
+    return "The customer is Netally, and their CPC looks to be high compared to peers in vertical. And all their spend is on search campaigns with broad match enabled."
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
 
 class PythonFunctionNode(FrontendNode):
     name: str = "PythonFunction"

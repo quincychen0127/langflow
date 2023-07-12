@@ -90,3 +90,9 @@ tools:
     documentation: ""
   WolframAlphaQueryRun:
     documentation: ""
+  SalesOutreachAgent:
+    documentation: ""
+  SalesContextAgent:
+    documentation: ""
+  AdwordsPerformanceAgent:
+    documentation: ""

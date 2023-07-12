@@ -18,6 +18,9 @@ CUSTOM_NODES = {
         "FetchNextBestAction": frontend_node.tools.FetchNextBestActionNode(),
         "GetAdsReportingData": frontend_node.tools.GetAdsReportingDataNode(),
         "PlannerAgent": frontend_node.tools.PlannerAgentNode(),
+        "SalesOutreachAgent": frontend_node.tools.SalesOutreachAgentNode(),
+        "SalesContextAgent": frontend_node.tools.SalesContextAgentNode(),
+        "AdwordsPerformanceAgent": frontend_node.tools.AdwordsPerformanceAgentNode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

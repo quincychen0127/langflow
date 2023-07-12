@@ -32,8 +32,8 @@ async def get_result_and_steps(langchain_object, message: str, **kwargs):
 
         fix_memory_inputs(langchain_object)
 
-        if hasattr(langchain_object, "agent"):
-            chat_input['input'] = f"Can you make a plan for the following problem and execute it? Use the planner agent then execute its tasks. The problem is {chat_input['input']} Please use the tools you have to execute them as well. Write an email if asked."
+        #if hasattr(langchain_object, "agent"):
+        #    chat_input['input'] = f"Can you make a plan for the following problem and execute it? Use the planner agent then execute its tasks. The problem is {chat_input['input']} Please use the tools you have to execute them as well. Write an email if asked."
         
         langchain_object.verbose = True
 
