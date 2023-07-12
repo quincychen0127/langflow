@@ -73,13 +73,14 @@ class SalesTransformChain(TransformChain):
 class FindTargetCompany(TransformChain):
     def __init__(self, *args, **kwargs):
         kwargs["transform"] = get_function("""def get_target(input_dict: dict) -> dict:
-    return {"company": "The targeted company we found is: Alphabet."}
+    return {"company": "The targeted company we found is: Netally."}
     """)
         kwargs["input_variables"] = ["text"]
         kwargs["output_variables"] = ["company"]
         super().__init__(*args, **kwargs)
 
 class FindPoc(TransformChain):
+    """FindPoc finds a Person Of Contact for the inputted company."""
     def __init__(self, *args, **kwargs):
         kwargs["transform"] = get_function("""def get_customer_poc(input_dict: dict) -> dict:
     return {"poc_result": "The contact information we found for the target company is as follows: The email is hejinming@google.com and the phone number is 6507722655."}
@@ -89,6 +90,7 @@ class FindPoc(TransformChain):
         super().__init__(*args, **kwargs)
 
 class CheckDoNotCallRegistry(TransformChain):
+    """Calls the OCT API to determine if the POC may be contacted."""    
     def __init__(self, *args, **kwargs):
         kwargs["transform"] = get_function("""def get_oct(input_dict: dict) -> dict:
     return {"oct_result": "We called the OCT API and found no restrictions for contacting this customer. OCT Result: False"}

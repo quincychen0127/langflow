@@ -113,6 +113,11 @@ class ChainFrontendNode(FrontendNode):
             field.show = False
             field.required = False
             field.advanced = True
+        
+        if name == "SequentialChain" and field.name == "memory":
+            field.show = False
+            field.required = False
+            field.advanced = True
 
 
 
