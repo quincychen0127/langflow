@@ -49,7 +49,7 @@ async def get_result_and_steps(langchain_object, message: str, **kwargs):
             # output.get(langchain_object.output_keys[0]) 
             '\n\n\n'.join(output_strings)
             if hasattr(langchain_object, "chains")
-            else output
+            else output.get(langchain_object.output_keys[0])
         )
         thought = format_actions(intermediate_steps) if intermediate_steps else ""
     except Exception as exc:

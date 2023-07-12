@@ -198,7 +198,7 @@ export function TabsProvider({ children }: { children: ReactNode }) {
     if (!flow.data || !flow.data.edges) return;
     flow.data.edges.forEach((edge) => {
       edge.className = "";
-      edge.style = { stroke: "#555555" };
+      edge.style = { stroke: "#FFFFFF" };
     });
   }
 
