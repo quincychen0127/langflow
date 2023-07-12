@@ -1,7 +1,7 @@
 from langflow.template.field.base import TemplateField
 from langflow.template.frontend_node.base import FrontendNode
 from langflow.template.template.base import Template
-from langflow.utils.constants import DEFAULT_PYTHON_FUNCTION
+from langflow.utils.constants import DEFAULT_PYTHON_FUNCTION, EMAIL_FUNCTION
 
 
 class ToolNode(FrontendNode):
@@ -430,6 +430,59 @@ class OptOutCheckupToolAPINode(PythonFunctionToolNode):
             ),
         ],
     )
+
+
+class EmailAPINode(PythonFunctionToolNode):
+    name: str = "EmailAPI"
+    description: str = "Email API. Use this to send an email to a customer."
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value="EmailAPI",
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value="Email API. Use this to send an email to a customer.",
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=EMAIL_FUNCTION,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
 
 class PythonFunctionNode(FrontendNode):
     name: str = "PythonFunction"

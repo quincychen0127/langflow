@@ -62,5 +62,7 @@ tools:
     documentation: ""
   ReportingAPI:
     documentation: ""
+  EmailAPI:
+    documentation: ""
   PythonFunction:
     documentation: ""

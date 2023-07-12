@@ -9,7 +9,7 @@ from langchain.agents.load_tools import (
 from langchain.tools.json.tool import JsonSpec
 
 from langflow.interface.importing.utils import import_class
-from langflow.interface.tools.custom import PythonFunctionTool, PythonFunction, MarketingObjectivesTool, GetCustomerPocAPI, OptOutCheckupToolAPI, ReportingAPI, GetPitchableLowHangingFruitWorkflow
+from langflow.interface.tools.custom import PythonFunctionTool, PythonFunction, MarketingObjectivesTool, GetCustomerPocAPI, OptOutCheckupToolAPI, ReportingAPI, GetPitchableLowHangingFruitWorkflow, EmailAPI
 
 FILE_TOOLS = {"JsonSpec": JsonSpec}
 CUSTOM_TOOLS = {
@@ -21,6 +21,7 @@ CUSTOM_TOOLS = {
     "OptOutCheckupToolAPI": OptOutCheckupToolAPI,
     "ReportingAPI": ReportingAPI,
     "GetPitchableLowHangingFruitWorkflow": GetPitchableLowHangingFruitWorkflow,
+    "EmailAPI": EmailAPI,
 }
 
 OTHER_TOOLS = {tool: import_class(f"langchain.tools.{tool}") for tool in tools.__all__}

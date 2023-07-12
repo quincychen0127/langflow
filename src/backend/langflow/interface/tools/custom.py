@@ -62,6 +62,9 @@ class ReportingAPI(PythonFunctionTool):
 class GetPitchableLowHangingFruitWorkflow(PythonFunctionTool):
     pass
 
+class EmailAPI(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 

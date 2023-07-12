@@ -14,6 +14,7 @@ CUSTOM_NODES = {
         "OptOutCheckupToolAPI": frontend_node.tools.OptOutCheckupToolAPINode(),
         "ReportingAPI": frontend_node.tools.ReportingAPINode(),
         "GetPitchableLowHangingFruitWorkflow": frontend_node.tools.GetPitchableLowHangingFruitWorkflowNode(),
+        "EmailAPI": frontend_node.tools.EmailAPINode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),
