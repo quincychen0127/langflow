@@ -160,11 +160,11 @@ def create_fields(name, description, code):
             ),
         ],
     
-class ShareOfWalletAPINode(PythonFunctionToolNode):
-    name: str = "ShareOfWalletAPI"
-    description: str = "Share of Wallet API. Use this when you need information about a customer's ads budget distribution."
-    code: str = """def share_of_wallet_api(customer: str) -> str:
-    return "Google: 40 million, Facebook: 60 million"
+class MarketingObjectivesToolNode(PythonFunctionToolNode):
+    name: str = "MarketingObjectivesTool"
+    description: str = "MarketingObjective API. Use this when you to find the marketing objective of a customer. You should pass the customer_name as the parameter to this tool."
+    code: str = """def marketing_objective_api(customer_name: str) -> str:
+    return "increase customer leads"
 """
     template: Template = Template(
         type_name="PythonFunctionTool",
@@ -216,7 +216,7 @@ class ShareOfWalletAPINode(PythonFunctionToolNode):
 
 class ReportingAPINode(PythonFunctionToolNode):
     name: str = "ReportingAPI"
-    description: str = "Reporting API. Use this when you need to find the low hanging fruit customers."
+    description: str = "Reporting API. Use this when you need to find the low hanging fruit customers. You should pass the number of customers to return as parameter to this tool."
     code: str = """def reporting_api(count: str) -> str:
     return "customer_name: Netally, spending: 10 million"
 """
@@ -270,7 +270,7 @@ class ReportingAPINode(PythonFunctionToolNode):
 
 class GetPitchableLowHangingFruitWorkflowNode(PythonFunctionToolNode):
     name: str = "GetPitchableLowHangingFruitWorkflow"
-    description: str = "GetPitchableLowHangingFruitWorkflow API. Use this when you need to find the pitchable low hanging fruit customers."
+    description: str = "GetPitchableLowHangingFruitWorkflow API. Use this when you need to find the pitchable low hanging fruit customers. You should pass the number of customers to return as parameter to this tool."
     code: str = """def pitchable_low_hanging_fruit_workflow(count: str) -> str:
     return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@google.com, phone: 1234567890"
 """

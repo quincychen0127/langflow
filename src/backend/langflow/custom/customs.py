@@ -9,7 +9,7 @@ CUSTOM_NODES = {
         "PythonFunctionTool": frontend_node.tools.PythonFunctionToolNode(),
         "PythonFunction": frontend_node.tools.PythonFunctionNode(),
         "Tool": frontend_node.tools.ToolNode(),
-        "ShareOfWalletAPI": frontend_node.tools.ShareOfWalletAPINode(),
+        "MarketingObjectivesTool": frontend_node.tools.MarketingObjectivesToolNode(),
         "GetCustomerPocAPI": frontend_node.tools.GetCustomerPocAPINode(),
         "OptOutCheckupToolAPI": frontend_node.tools.OptOutCheckupToolAPINode(),
         "ReportingAPI": frontend_node.tools.ReportingAPINode(),

@@ -52,7 +52,7 @@ tools:
     documentation: ""
   PythonFunctionTool:
     documentation: ""
-  ShareOfWalletAPI:
+  MarketingObjectivesTool:
     documentation: ""
   GetCustomerPocAPI:
     documentation: ""

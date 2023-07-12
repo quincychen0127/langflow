@@ -47,7 +47,7 @@ class PythonFunctionTool(Function, Tool):
         self.func = get_function(self.code)
         super().__init__(name=name, description=description, func=self.func)
 
-class ShareOfWalletAPI(PythonFunctionTool):
+class MarketingObjectivesTool(PythonFunctionTool):
     pass
 
 class GetCustomerPocAPI(PythonFunctionTool):
