@@ -268,6 +268,114 @@ class ReportingAPINode(PythonFunctionToolNode):
         ],
     )
 
+class AdwordsCampaignPerformanceToolNode(PythonFunctionToolNode):
+    name: str = "AdwordsCampaignPerformanceTool"
+    description: str = "AdwordsCampaignPerformanceTool API. Use this when you need to find the campaign performance of a customer. You should pass the customer_name as the parameter to this tool."
+    code: str = """def adwords_campaign_performance(customer_name: str) -> str:
+    return "customer_name: Netally, cpc: 0.5 USD"
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
+class NextBestActionToolNode(PythonFunctionToolNode):
+    name: str = "NextBestActionTool"
+    description: str = "NextBestActionToolNode API. Use this when you need to find an ads product to suggest to the customer. You should pass the customer_name as the parameter to this tool."
+    code: str = """def next_best_action(customer_name: str) -> str:
+    return "customer_name: Netally, ads_product: PMax, rationale: cpc is too high due to incorrect manual config. PMax will help you optimize your ads spend."
+"""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
 class GetPitchableLowHangingFruitWorkflowNode(PythonFunctionToolNode):
     name: str = "GetPitchableLowHangingFruitWorkflow"
     description: str = "GetPitchableLowHangingFruitWorkflow API. Use this when you need to find the pitchable low hanging fruit customers. You should pass the number of customers to return as parameter to this tool."

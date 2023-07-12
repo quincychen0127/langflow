@@ -15,6 +15,8 @@ CUSTOM_NODES = {
         "ReportingAPI": frontend_node.tools.ReportingAPINode(),
         "GetPitchableLowHangingFruitWorkflow": frontend_node.tools.GetPitchableLowHangingFruitWorkflowNode(),
         "EmailAPI": frontend_node.tools.EmailAPINode(),
+        "NextBestActionTool": frontend_node.tools.NextBestActionToolNode(),
+        "AdwordsCampaignPerformanceTool": frontend_node.tools.AdwordsCampaignPerformanceToolNode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

@@ -62,7 +62,9 @@ tools:
     documentation: ""
   ReportingAPI:
     documentation: ""
-  EmailAPI:
+  NextBestActionTool:
+    documentation: ""
+  AdwordsCampaignPerformanceTool:
     documentation: ""
   PythonFunction:
     documentation: ""

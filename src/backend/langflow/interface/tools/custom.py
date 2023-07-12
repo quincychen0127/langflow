@@ -65,6 +65,12 @@ class GetPitchableLowHangingFruitWorkflow(PythonFunctionTool):
 class EmailAPI(PythonFunctionTool):
     pass
 
+class NextBestActionTool(PythonFunctionTool):
+    pass
+
+class AdwordsCampaignPerformanceTool(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 
