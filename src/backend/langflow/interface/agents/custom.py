@@ -312,6 +312,7 @@ class InitializeAgent(CustomAgentExecutor):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        kwargs["text"] = "Can you make a plan for the following problem and execute it? The problem is " + kwargs["text"] + " Please use the tools you have to execute them as well."
 
     def run(self, *args, **kwargs):
         return super().run(*args, **kwargs)
