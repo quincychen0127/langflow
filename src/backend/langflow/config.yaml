@@ -1,18 +1,6 @@
 agents:
-  ZeroShotAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/how_to/custom_mrkl_agent"
-  JsonAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/toolkits/openapi"
-  CSVAgent:
-    documentation: "https://python.langchain.com/docs/modules/agents/toolkits/csv"
   AgentInitializer:
     documentation: "https://python.langchain.com/docs/modules/agents/agent_types/"
-  VectorStoreAgent:
-    documentation: ""
-  VectorStoreRouterAgent:
-    documentation: ""
-  SQLAgent:
-    documentation: ""
 chains:
   LLMChain:
     documentation: "https://python.langchain.com/docs/modules/chains/foundational/llm_chain"
@@ -60,18 +48,6 @@ llms:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/openai"
   ChatOpenAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
-  LlamaCpp:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/llamacpp"
-  CTransformers:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/ctransformers"
-  Cohere:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/cohere"
-  Anthropic:
-    documentation: ""
-  ChatAnthropic:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/anthropic"
-  HuggingFaceHub:
-    documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/huggingface_hub"
   VertexAI:
     documentation: "https://python.langchain.com/docs/modules/model_io/models/llms/integrations/google_vertex_ai_palm"
   ###
@@ -87,56 +63,28 @@ prompts:
     documentation: "https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/"
   ZeroShotPrompt:
     documentation: "https://python.langchain.com/docs/modules/agents/how_to/custom_mrkl_agent"
-textsplitters:
-  CharacterTextSplitter:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/character_text_splitter"
-  RecursiveCharacterTextSplitter:
-    documentation: "https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/recursive_text_splitter"
-toolkits:
-  OpenAPIToolkit:
-    documentation: ""
-  JsonToolkit:
-    documentation: ""
-  VectorStoreInfo:
-    documentation: ""
-  VectorStoreRouterToolkit:
-    documentation: ""
-  VectorStoreToolkit:
-    documentation: ""
 tools:
-  Search:
-    documentation: ""
-  PAL-MATH:
-    documentation: ""
-  Calculator:
-    documentation: ""
-  Serper Search:
-    documentation: ""
   Tool:
     documentation: ""
   PythonFunctionTool:
     documentation: ""
+  GetMarketingObjectives:
+    documentation: ""
+  # GetCustomerPocAPI:
+  #   documentation: ""
+  GetTopPitchableCustomer:
+    documentation: ""
+  # OptOutCheckupToolAPI:
+  #   documentation: ""
+  # ReportingAPI:
+  #   documentation: ""
+  FetchNextBestAction:
+    documentation: ""
+  GetAdsReportingData:
+    documentation: ""
+  PlannerAgent:
+    documentation: ""
   PythonFunction:
-    documentation: ""
-  JsonSpec:
-    documentation: ""
-  News API:
-    documentation: ""
-  TMDB API:
-    documentation: ""
-  Podcast API:
-    documentation: ""
-  QuerySQLDataBaseTool:
-    documentation: ""
-  InfoSQLDatabaseTool:
-    documentation: ""
-  ListSQLDatabaseTool:
-    documentation: ""
-  BingSearchRun:
-    documentation: ""
-  GoogleSearchRun:
-    documentation: ""
-  GoogleSearchResults:
     documentation: ""
   GoogleSerperRun:
     documentation: ""
@@ -162,4 +110,3 @@ tools:
     documentation: ""
   WolframAlphaQueryRun:
     documentation: ""
-

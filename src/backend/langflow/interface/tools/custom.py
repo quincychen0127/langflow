@@ -47,6 +47,32 @@ class PythonFunctionTool(Function, Tool):
         self.func = get_function(self.code)
         super().__init__(name=name, description=description, func=self.func)
 
+class GetMarketingObjectives(PythonFunctionTool):
+    pass
+
+class GetCustomerPocAPI(PythonFunctionTool):
+    pass
+
+class OptOutCheckupToolAPI(PythonFunctionTool):
+    pass
+
+class ReportingAPI(PythonFunctionTool):
+    pass
+
+class GetTopPitchableCustomer(PythonFunctionTool):
+    pass
+
+class EmailAPI(PythonFunctionTool):
+    pass
+
+class FetchNextBestAction(PythonFunctionTool):
+    pass
+
+class GetAdsReportingData(PythonFunctionTool):
+    pass
+
+class PlannerAgent(PythonFunctionTool):
+    pass
 
 class PythonFunction(Function):
     """Python function"""
