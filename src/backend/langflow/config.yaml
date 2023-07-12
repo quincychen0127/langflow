@@ -54,17 +54,19 @@ tools:
     documentation: ""
   GetMarketingObjectives:
     documentation: ""
-  GetCustomerPocAPI:
-    documentation: ""
+  # GetCustomerPocAPI:
+  #   documentation: ""
   GetTopPitchableCustomer:
     documentation: ""
-  OptOutCheckupToolAPI:
-    documentation: ""
-  ReportingAPI:
-    documentation: ""
+  # OptOutCheckupToolAPI:
+  #   documentation: ""
+  # ReportingAPI:
+  #   documentation: ""
   FetchNextBestAction:
     documentation: ""
   GetAdsReportingData:
+    documentation: ""
+  PlannerAgent:
     documentation: ""
   PythonFunction:
     documentation: ""

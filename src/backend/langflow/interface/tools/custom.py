@@ -71,6 +71,9 @@ class FetchNextBestAction(PythonFunctionTool):
 class GetAdsReportingData(PythonFunctionTool):
     pass
 
+class PlannerAgent(PythonFunctionTool):
+    pass
+
 class PythonFunction(Function):
     """Python function"""
 

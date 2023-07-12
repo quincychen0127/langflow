@@ -17,6 +17,7 @@ CUSTOM_NODES = {
         "EmailAPI": frontend_node.tools.EmailAPINode(),
         "FetchNextBestAction": frontend_node.tools.FetchNextBestActionNode(),
         "GetAdsReportingData": frontend_node.tools.GetAdsReportingDataNode(),
+        "PlannerAgent": frontend_node.tools.PlannerAgentNode(),
     },
     "agents": {
         "JsonAgent": frontend_node.agents.JsonAgentNode(),

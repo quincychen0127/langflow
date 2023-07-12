@@ -214,6 +214,64 @@ class GetMarketingObjectivesNode(PythonFunctionToolNode):
         ],
     )
 
+PLAN = "Here are steps to make a low hanging fruit pitch to a Google ads customer. \
+Step 1. Identify the top pitchable customer company, find its POC.\
+Step 2. Check the customer's campaign performance metrics and product recommendations from the Next Best Action engine. Do any Google ads product help them better achieve their objectives? \
+(optional) Step 3. If applicable, draft a short email (no more than 50 words) to the customer company to recommend a Google ads product.\
+Step 4. Give TL;DR for each step."
+
+class PlannerAgentNode(PythonFunctionToolNode):
+    name: str = "PlannerAgent"
+    description: str = "Useful to make a plan to solve a problem. Pass the problem as the parameter."
+    code: str = f"def make_plans(problem: str) -> str: return \"{PLAN}\""
+    template: Template = Template(
+        type_name="PythonFunctionTool",
+        fields=[
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=name,
+                name="name",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="str",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=description,
+                name="description",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="code",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                value=code,
+                name="code",
+                advanced=False,
+            ),
+            TemplateField(
+                field_type="bool",
+                required=False,
+                placeholder="",
+                is_list=False,
+                show=False,
+                multiline=False,
+                value=False,
+                name="return_direct",
+            ),
+        ],
+    )
+
 class ReportingAPINode(PythonFunctionToolNode):
     name: str = "ReportingAPI"
     description: str = "Reporting API. Use this when you need to find the low hanging fruit customers. You should pass the number of customers to return as parameter to this tool."
