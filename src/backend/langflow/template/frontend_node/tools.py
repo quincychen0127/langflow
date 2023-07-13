@@ -713,7 +713,7 @@ class SalesContextAgentNode(PythonFunctionToolNode):
     name: str = "SalesContextAgent"
     description: str = "SalesContextAgent that can help you get the sales context about a customer like marketing objective and recommendation."
     code: str = """def get_sales_context(customer_name: str) -> str:
-    return "The customer is Netally, and their marketing objective is to maximize conversions. Currently they have conversion tracking enabled and is manually setting CPC. One recommendation is they could Adopt Smart Bidding (specifically “maximize conversions” bid strategy) to maximize conversions on relevant queries."
+    return "The customer is Netally, and their marketing objective is to maximize conversions. Currently they have conversion tracking enabled and is manually setting CPC. Combining with high CPC, one recommendation is they could Adopt Smart Bidding (specifically “maximize conversions” bid strategy) to maximize conversions on relevant queries."
 """
     template: Template = Template(
         type_name="PythonFunctionTool",
