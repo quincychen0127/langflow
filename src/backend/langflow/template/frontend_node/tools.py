@@ -221,14 +221,14 @@ Step 3. Draft a short email (no more than 50 words) to the customer company to r
 Step 4. Give TL;DR for each step."
 
 PLAN2 = "Here are steps to make a recommendation. \
-Step 1. Check the  Adwords Performance for the client. \
-Step 2. Check the Sales Context for the client and relevant recommendation \
-Step 3. Get Sales Outreach information including the name of point of contact and the email adress \
-Step 4. Draft an email to the point of contact with relevant recommendaton."
+Step 1. Get Sales Outreach information about a pitchable company including the name of point of contact and the email adress. \
+Step 2. Check the Adwords Performance for the client. \
+Step 3. Check the Sales Context for the client and relevant recommendations. \
+Step 4. Draft a short email no more than 90 words to the point of contact with relevant recommendations."
 
 class PlannerAgentNode(PythonFunctionToolNode):
     name: str = "PlannerAgent"
-    description: str = "Useful to make a plan to solve a problem. Pass the problem as the parameter."
+    description: str = "Useful to make a step-by-step plan to solve a problem. Pass the problem as the parameter."
     code: str = f"def make_plans(problem: str) -> str: return \"{PLAN2}\""
     template: Template = Template(
         type_name="PythonFunctionTool",
@@ -657,7 +657,7 @@ class EmailAPINode(PythonFunctionToolNode):
 
 class SalesOutreachAgentNode(PythonFunctionToolNode):
     name: str = "SalesOutreachAgent"
-    description: str = "SalesOutreachAgent that can give you the information about customer name, spending, and poc information."
+    description: str = "SalesOutreachAgent that can give you a customer who could pitch to, their spending, and and the poc information."
     code: str = """def sales_outreach(count: str) -> str:
     return "customer_name: Netally, spending: 10 million, POC: hejinming, email: hejinming@gmail.com, phone: 1234567890"
 """
